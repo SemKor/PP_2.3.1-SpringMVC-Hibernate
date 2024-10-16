@@ -56,7 +56,7 @@ public class AppConfig {
     public LocalContainerEntityManagerFactoryBean entityManagerFactory() {
         LocalContainerEntityManagerFactoryBean entManager = new LocalContainerEntityManagerFactoryBean();
         entManager.setDataSource(dataSource());
-        entManager.setPackagesToScan("konst.web_app");
+        entManager.setPackagesToScan("web");
 
         final HibernateJpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
         entManager.setJpaVendorAdapter(vendorAdapter);
