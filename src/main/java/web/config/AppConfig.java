@@ -33,10 +33,10 @@ public class AppConfig {
     public DataSource dataSource() {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
 
-        dataSource.setDriverClassName(env.getRequiredProperty("hibernate.driver"));
-        dataSource.setUrl(env.getRequiredProperty("hibernate.url"));
-        dataSource.setUsername(env.getRequiredProperty("hibernate.username"));
-        dataSource.setPassword(env.getRequiredProperty("hibernate.password"));
+        dataSource.setDriverClassName(env.getRequiredProperty("db.driver"));
+        dataSource.setUrl(env.getRequiredProperty("db.url"));
+        dataSource.setUsername(env.getRequiredProperty("db.username"));
+        dataSource.setPassword(env.getRequiredProperty("db.password"));
 
         return dataSource;
     }
