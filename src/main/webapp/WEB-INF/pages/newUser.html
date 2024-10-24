@@ -1,26 +1,25 @@
 <!DOCTYPE html>
-<html lang="ru" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="UTF-8">
-  <title>Регистрация</title>
+  <title>New User</title>
 </head>
 <body>
-<h2> User Information</h2>
-<br>
 
-<form th:action="@{/saveUser}" th:object="${user}" method="post">
+<h2>Add New User</h2>
 
-
-  Name: <input th:field="*{name}" type="text"/>
+<form th:action="@{/addUser}" th:method="post" th:object="${user}">
+  <label for="name">Enter Name</label>
+  <input type="text" th:field="*{name}" id="name" required/>
   <br><br>
-  Job: <input th:field="*{job}" type="text"/>
+  <label for="surname">Enter Surname</label>
+  <input type="text" th:field="*{surname}" id="surname" required/>
   <br><br>
-  Year: <input th:field="*{yearOfBirth}" type="text"/>
+  <label for="age">Enter Age</label>
+  <input type="text" th:field="*{age}" id="age" required pattern="\d+"/>
   <br><br>
-  <input type="submit" value="OK">
-
-  <input type="hidden" th:field="*{id}"/>
-
+  <input type="submit" value="Create">
 </form>
+
 </body>
 </html>

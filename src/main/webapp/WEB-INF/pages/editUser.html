@@ -1,59 +1,26 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Create User</title>
-
-    <style>
-        h1 {
-            text-align: center;
-        }
-
-        form {
-            padding: 10px;
-        }
-
-        input[type="submit"] {
-            font-size: 20px;
-            cursor: pointer;
-        }
-
-        h6 {
-            text-align: left;
-        }
-    </style>
-
+    <title>Title</title>
 </head>
 <body>
 
-<h1>Add User</h1>
+<h2>Update User</h2>
 
-<br/>
-<hr/>
-<br/>
-
-<form th:method="POST" th:action="@{/users}" th:object="${user}">
-    <label for="name">Enter your name: </label>
-    <input type="text" th:field="*{name}" id="name"/>
-    <div style="color: orange" th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Name error</div>
-    <br/>
-    <br/>
-    <label for="surName">Enter your surName: </label>
-    <input type="text" th:field="*{surName}" id="surName"/>
-    <div style="color: orange" th:if="${#fields.hasErrors('surName')}" th:errors="*{surName}">SurName error</div>
-
-    <br/>
-    <br/>
-    <br/>
-    <input type="submit" value="Create!"/>
+<form th:action="@{/updateUser}" th:method="post" th:object="${user}">
+    <input name="id" th:field="*{id}" th:value="${user.id}" hidden="hidden">
+    <label for="name">Name</label>
+    <input type="text" th:field="*{name}" id="name" th:value="${user.name}" required/>
+    <br>
+    <label for="surname">Surname</label>
+    <input type="text" th:field="*{surname}" id="surname" th:value="${user.surname}" required/>
+    <br>
+    <label for="age">Age</label>
+    <input type="text" th:field="*{age}" id="age" th:value="${user.age}" required pattern="\d+"/>
+    <br><br>
+    <input type="submit" value="Update">
 </form>
-
-<br/>
-<hr/>
-
-<h6>
-    <button onclick="window.location.href='/users'">go back to the list of users</button>
-</h6>
 
 </body>
 </html>
