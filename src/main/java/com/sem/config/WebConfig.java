@@ -15,6 +15,10 @@ import org.thymeleaf.spring6.view.ThymeleafViewResolver;
 @Configuration
 @EnableWebMvc
 @ComponentScan("com.sem")
+
+// Этот код на Java настраивает конфигурацию веб-приложения на основе Spring Framework
+// с использованием Thymeleaf в качестве движка шаблонов для представлений.
+
 public class WebConfig implements WebMvcConfigurer {
 
 

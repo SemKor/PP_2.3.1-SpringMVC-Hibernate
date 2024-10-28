@@ -20,6 +20,15 @@ import java.util.Properties;
 @Configuration
 @EnableTransactionManagement
 @PropertySource({"classpath:db.properties"})
+
+
+//Этот код на Java настраивает конфигурацию базы данных для приложения
+// на основе Spring Framework с использованием JPA (Java Persistence API) и Hibernate.
+// Давайте разберем его по частям:
+//Этот класс DataBaseConfig настраивает все необходимые компоненты для работы с базой данных
+// через JPA и Hibernate, включая соединение с базой данных, управление сущностями и транзакциями.
+
+
 public class DataBaseConfig {
 
     private final Environment env;
